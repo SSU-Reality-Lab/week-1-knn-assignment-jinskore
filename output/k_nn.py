@@ -32,7 +32,7 @@ class KNearestNeighbor(object):
         dists = np.zeros((num_test, num_train))
         for i in range(num_test):
             for j in range(num_train):
-                # 작성하시요
+                # 작성하시오
                 dists[i][j] = np.sqrt(np.sum(np.square(X[i] - self.X_train[j])))    # 수정한 부분
         return dists
     
@@ -53,6 +53,7 @@ class KNearestNeighbor(object):
         dists = np.zeros((num_test, num_train))
         # Note: (a - b)^2 = -2ab + a^2 + b^2
         # 작성하시오
+        # 수정 코드
         dists = np.sqrt(-2*np.dot(X, self.X_train.T) + np.sum(np.square(self.X_train), axis = 1) + np.transpose([np.sum(np.square(X), axis = 1)]))
         return dists
 
